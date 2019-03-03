@@ -7,27 +7,34 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <div id="div">
-    <section>
-      <div>
-        <h1>YOU</h1>
-        <div>
-          <div>
-
+  <div id="app">
+    <section class="row">
+      <div class="small-6 columns">
+        <h1 class="text-center">YOU</h1>
+        <div class="healthbar">
+          <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"
+          :style="{width: playerHealth + '%'}">
+          {{ playerHealth }}
           </div>
         </div>
       </div>
-      <div>
-        <h1>MONSTER</h1>
-        <div>
-          <div>
-            
+      <div class="small-6 columns">
+        <h1 class="text-center">MONSTER</h1>
+        <div class="healthbar">
+          <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"
+          :style="{width: monsterHealth + '%'}">
+          {{ monsterHealth }}
           </div>
         </div>
       </div>
     </section>
-    <section>
+    <section class="row controls" v-if="!gameIsRunning">
       <div></div>
+    </section>
+    <section class="row controls" v-if="gameIsRunning">
+      <div></div>
+    </section>
+    <section>
     </section>
   </div>
 <script src="app.js"></script>
